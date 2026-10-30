@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "order-backlog-consolidation"
+version = "0.1.0"
+description = "Combines open orders from three fictional source systems into one open order book with monthly history."
+requires-python = ">=3.11"
+dependencies = ["pandas>=2.1", "numpy>=1.26,<3", "duckdb>=1.4,<2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+include = ["generator*", "pipeline*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
